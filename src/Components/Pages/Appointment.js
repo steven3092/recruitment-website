@@ -1,19 +1,21 @@
 import React from 'react';
-//import './Accueil.css';
 
-class Appointment extends React.Component {
-  
- 
-  render () {
+
+const Appointment = () => {
+
+
 
     return (
+      <>
      <div>
        <h1>Welcome to the Rdv !!</h1>
      
      </div>
 
+</>
+
     );
   }
-}
+
 
 export default Appointment;

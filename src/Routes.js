@@ -40,7 +40,7 @@ function Routes(){
         <Route path= "/Clients" component={Clients}/>
         <Route path= "/Juniors" component={Juniors}/>
         <Route path= "/Seniors" component={Seniors}/>
-        <Route path= "/Rdv" component={Appointment}/>
+        <Route path= "/Appointment" component={Appointment}/>
         <Route path= "/Mail" component={Mail}/>
         <Route path= "/SignIn" component={SignIn}/>
         <Route path= "/SignUp" component={SignUp}/>

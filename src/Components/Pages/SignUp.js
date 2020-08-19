@@ -26,17 +26,17 @@ import firebaseConfig from '../../base';
         <form onSubmit={handleSignUp}>
         <div class="container">
             <div class = "registration">
-          <h1>Register</h1>
+          <h1>Registering</h1>
           <p>Fill in the blanks to create an account</p>
           </div>
       
-          <label for="email"><b>E-mail address</b></label>
+          <label for="email"><b>E-mail address :</b></label>
           <input type="email" placeholder="E-mail" name="email" id="email" required/>
       
-          <label for="psw"><b>Password</b></label>
+          <label for="psw"><b>Password :</b></label>
           <input type="password" placeholder="Password" name="psw" id="psw" required/>
       
-          <label for="psw-repeat"><b>Repeat password</b></label>
+          <label for="psw-repeat"><b>Repeat password :</b></label>
           <input type="password" placeholder="Password" name="password" id="psw-repeat" required/>
           
       

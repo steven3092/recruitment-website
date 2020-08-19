@@ -1,5 +1,9 @@
 import React from 'react';
-import axiosPostMail from '../../Context/axiosPostMail'
+//import axiosPostMailBDD from '../../Context/axiosPostMailBDD'
+//import axiosPostMail from '../../Context/axiosPostMail'
+
+
+
  class Mail extends React.Component {
 
   state = {
@@ -8,7 +12,7 @@ import axiosPostMail from '../../Context/axiosPostMail'
     message:'',
     success: null
   }
-  
+/* //This submit allows to send mail data in the datebase in Firebase
   handleSubmit = (e) =>{
     e.preventDefault();
 
@@ -17,7 +21,7 @@ import axiosPostMail from '../../Context/axiosPostMail'
       name: this.state.name,
       message:this.state.message,
     }
-    axiosPostMail.post('/Mail.json', Data)
+    axiosPostMailBDD.post('/Mail.json', Data)
     .then(res => {
       console.log(res);
       if (res.status === 200) {
@@ -25,24 +29,17 @@ import axiosPostMail from '../../Context/axiosPostMail'
         this.setState({isError : null});
     } 
     })
-   }
-    
-
-  render(){
+  }   onSubmit={this.handleSubmit}*/
+   
+   render() {
 
     return (
       <>
-     <div>
-       <h1>Welcome to the Mail !!</h1>
-     
-     </div>
-
-           
-      <form onSubmit={this.handleSubmit}>
+      <form >
           <div class="container">
-              <h2>Sending email</h2>
+              <h2>Send email</h2>
               <br></br>
-            <label for="email"><b>E-mail address</b></label>
+            <label for="email"><b>E-mail address :</b></label>
             <input type="email"
              placeholder="Email" 
              name="email"
@@ -50,7 +47,7 @@ import axiosPostMail from '../../Context/axiosPostMail'
              onChange= {(e)=> this.setState({email:e.target.value})}
              required
              />
-            <label for="name">Name</label>
+            <label for="name"><b>Name :</b></label>
             <input type="name"
              placeholder="Name" 
              name="name"
@@ -58,12 +55,10 @@ import axiosPostMail from '../../Context/axiosPostMail'
              onChange= {(e)=> this.setState({name:e.target.value})}
              
              />
-            <textarea id="Message" name="message" value= {this.state.message} onChange= {(e)=> this.setState({message:e.target.value})} rows="4" cols="63" required>
-                    Write a message.
+            <label for="message"><b>Write a message :</b></label>
+            <textarea id="Message" name="message" value= {this.state.message} onChange= {(e)=> this.setState({message:e.target.value})} rows="4" cols="63" required> 
             </textarea>
-        
-            <button type="submit" onSubmit={this.handleSubmit}>Send</button>
-
+            <button onClick={(e)=>{e.preventDefault(); window.open("https://us-central1-bdd-recruitement-website.cloudfunctions.net/emailSender?dest="+this.state.email+"&cont="+this.state.message+"&name="+this.state.name+"");}}>Send</button>
           </div>
       </form>
       { this.state.success && <div style= {{padding : "2% 0"}}><span style= {{border:"10px solid green", background:"green", color:"#ffffff", margin: "0% 20% 0% 35.20%"}}>{this.state.success}</span></div>}
@@ -72,6 +67,7 @@ import axiosPostMail from '../../Context/axiosPostMail'
 
     );
   }
+
  }
 
-export default Mail;
+  export default Mail;

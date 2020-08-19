@@ -98,10 +98,10 @@ const Dropdown3 = ({ callbackFromParent3 }) => {
 		<Grid container ref={node}>
 			<Grid >
 				<ListItem onClick={() => callbackFromParent3(false)}>
-					<Link to="/Appointment">Appointement</Link>
+					<Link to="/Appointment">Appointment</Link>
 				</ListItem>
        			 <ListItem onClick={() => callbackFromParent3(false)}>
-					<Link to="/Mail">Mail sending</Link>
+					<Link to="/Mail">Send email</Link>
 				</ListItem>
 			</Grid>
 		</Grid>

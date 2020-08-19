@@ -15,7 +15,6 @@ const nodemailer = require('nodemailer');
 //Initializing Firebase Admin SDK
 admin.initializeApp();
 
-
 //Creating Nodemailer transporter using your Mailtrap SMTP details
 let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -31,17 +30,14 @@ let transporter = nodemailer.createTransport({
 
 //Creating a Firebase Cloud Function
   exports.emailSender = functions.https.onRequest((req, res) => {
-/*
-    cors(req, res, () => {
-        if (req.method !== 'POST') {
-          return;
-        }
-*/
+    //res.send({ "data": "Hello from Firebase!" });
+    
+
     const mailOptions = {
-        from: "steven.fauterre@laposte.net", //Adding sender's email
+        from: "recruitmentwebsite1@gmail.com", //Adding sender's email
         to: req.query.dest, //Getting recipient's email by query string
-        subject: 'Email Sent via Firebase test', //Email subject
-        html: '<b>Sending emails with Firebase is easy!</b>' //Email content in HTML
+        subject: 'Recuitment website reply', //Email subject
+        html: '<h3>Hello dear '+req.query.name+'</h3><br></br><b>We received your email from : '+req.query.dest+'</b></br><br><div>'+req.query.cont+'</div>' //Email content in HTML
     };
 
     return transporter.sendMail(mailOptions, (err, info) => {
@@ -51,6 +47,7 @@ let transporter = nodemailer.createTransport({
         return res.send('Email sent successfully');
     });
     });
- // });
+  
+
 
   //https://us-central1-bdd-recruitement-website.cloudfunctions.net/emailSender?dest=recruitmentwebsite1@gmail.com

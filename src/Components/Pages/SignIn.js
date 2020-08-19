@@ -37,7 +37,7 @@ const SignIn = ({ history }) => {
        <>
           <form onSubmit={handleLogin}>
           <div class="container">
-            <label for="email"><b>E-mail address</b></label>
+            <label for="email"><b>E-mail address :</b></label>
             <input type="email"
              placeholder="E-mail" 
              name="email" 
@@ -45,7 +45,7 @@ const SignIn = ({ history }) => {
              
              />
         
-            <label for="psw"><b>Password</b></label>
+            <label for="psw"><b>Password :</b></label>
             <input type="password"
               placeholder="Mot de passe" 
               name="password" 
