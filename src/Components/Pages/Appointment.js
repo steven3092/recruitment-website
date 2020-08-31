@@ -2,15 +2,15 @@ import React from 'react';
 //import './Accueil.css';
 
 class Appointment extends React.Component {
-  
- 
-  render () {
+
+
+  render() {
 
     return (
-     <div>
-       <h1>Welcome to the Rdv !!</h1>
-     
-     </div>
+      <div>
+        <h1>Welcome to the Appointment !!</h1>
+
+      </div>
 
     );
   }
