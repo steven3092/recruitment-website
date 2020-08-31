@@ -15,4 +15,4 @@ app.get('/*', function (req, res) {
 
 app.listen(port, () => console.log(`App is live on port ${port}!`))
 
-//node server.js
+//react-scripts start
