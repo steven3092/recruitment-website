@@ -1,5 +1,5 @@
 import React, * as react from 'react';
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Grid, ListItem } from '@material-ui/core';
 import './NavBar.css';
 
@@ -24,14 +24,14 @@ const Dropdown = ({ callbackFromParent }) => {
 		};
 	}, []);
 
-  return (
-	  //We set the link to pages sectors and clients
+	return (
+		//We set the link to pages sectors and clients
 		<Grid container ref={node}>
 			<Grid >
 				<ListItem onClick={() => callbackFromParent(false)}>
 					<Link to="/Sectors">Activity sectors</Link>
 				</ListItem>
-       			 <ListItem onClick={() => callbackFromParent(false)}>
+				<ListItem onClick={() => callbackFromParent(false)}>
 					<Link to="/Clients">Our clients</Link>
 				</ListItem>
 			</Grid>
@@ -58,14 +58,14 @@ const Dropdown2 = ({ callbackFromParent2 }) => {
 		};
 	}, []);
 
-  return (
-	  
+	return (
+
 		<Grid container ref={node}>
 			<Grid >
 				<ListItem onClick={() => callbackFromParent2(false)}>
 					<Link to="/Juniors">Juniors</Link>
 				</ListItem>
-       			 <ListItem onClick={() => callbackFromParent2(false)}>
+				<ListItem onClick={() => callbackFromParent2(false)}>
 					<Link to="/Seniors">Seniors</Link>
 				</ListItem>
 			</Grid>
@@ -93,14 +93,14 @@ const Dropdown3 = ({ callbackFromParent3 }) => {
 		};
 	}, []);
 
-  return (
-	  //We set the link to pages appointement and mail
+	return (
+		//We set the link to pages appointement and mail
 		<Grid container ref={node}>
 			<Grid >
 				<ListItem onClick={() => callbackFromParent3(false)}>
 					<Link to="/Appointment">Appointement</Link>
 				</ListItem>
-       			 <ListItem onClick={() => callbackFromParent3(false)}>
+				<ListItem onClick={() => callbackFromParent3(false)}>
 					<Link to="/Mail">Mail sending</Link>
 				</ListItem>
 			</Grid>
@@ -123,56 +123,56 @@ const NavBar = () => {
 	const myCallback2 = (listOpen2) => {
 		setListOpen2(listOpen2);
 	};
-		
+
 	const myCallback3 = (listOpen3) => {
 		setListOpen3(listOpen3);
 	};
 
 	return (
 		<Grid container className="navbar">
-				<Link to="/">
+			<Link to="/">
 				<a href="#Recruitement" onClick={() => setListOpen(false)}>
-        			Recruitment Website
+					Recruitment Website
 				</a>
-				</Link>
-				<Link to="/History">
+			</Link>
+			<Link to="/History">
 				<a href="#History" onClick={() => setListOpen(false)}>
-       				Our history
+					Our history
 				</a>
-				</Link>
-				<Grid >
+			</Link>
+			<Grid >
 				<div class="dropdown">
 					<button class="dropbtn" onClick={() => setListOpen(!listOpen)}>
-        			<a href="#Missions" >Our missions</a>
+						<a href="#Missions" >Our missions</a>
 					</button>
 					<div class="dropdown-content">{listOpen ? <Dropdown callbackFromParent={myCallback} /> : null}</div>
 				</div>
-				</Grid>
-				<Grid >
+			</Grid>
+			<Grid >
 				<div class="dropdown">
 					<button class="dropbtn" onClick={() => setListOpen2(!listOpen2)}>
-        			<a href="#Carriere" >Your career</a>
+						<a href="#Carriere" >Your career</a>
 					</button>
 					<div class="dropdown-content">{listOpen2 ? <Dropdown2 callbackFromParent2={myCallback2} /> : null}</div>
 				</div>
-				</Grid>
-				<Grid >
+			</Grid>
+			<Grid >
 				<div class="dropdown">
 					<button class="dropbtn" onClick={() => setListOpen3(!listOpen3)}	>
-        			<a href="#Carriere" >Contact us</a>
+						<a href="#Carriere" >Contact us</a>
 					</button>
 					<div class="dropdown-content">{listOpen3 ? <Dropdown3 callbackFromParent3={myCallback3} /> : null}</div>
 				</div>
-				</Grid>
-				<Link to="/SignIn">
+			</Grid>
+			<Link to="/SignIn">
 				<a href="#Sign" onClick={() => setListOpen(false)}>
-       				 Sign in
+					Sign in
 				</a>
-				</Link>
+			</Link>
 
 		</Grid>
-		
-		
+
+
 	);
 };
 

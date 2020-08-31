@@ -22,38 +22,38 @@ import Appointment from './Components/Pages/Appointment';
 
 //All our routes in the app to navigate between them
 
-function Routes(){
+function Routes() {
 
- 
+
 
     return (
-    
-    <AuthProvider >
-    <Router>
-    <div>
-    <NavBar />
-    <Switch>
-  
-        <Route exact path= "/" component={Home}/>
-        <Route path= "/History" component={History}/>
-        <Route path= "/Sectors" component={Sectors}/>
-        <Route path= "/Clients" component={Clients}/>
-        <Route path= "/Juniors" component={Juniors}/>
-        <Route path= "/Seniors" component={Seniors}/>
-        <Route path= "/Rdv" component={Appointment}/>
-        <Route path= "/Mail" component={Mail}/>
-        <Route path= "/SignIn" component={SignIn}/>
-        <Route path= "/SignUp" component={SignUp}/>
-        <Route path= "/pswForgot" component={pswForgot}/>
-        <PrivateRoute path="/MySpace" component={MySpace} />
-        <Route component={Notfound}/>
-        
-  
-    </Switch> 
-    </div>
-    </Router>
-    </AuthProvider>
-    
+
+        <AuthProvider >
+            <Router>
+                <div>
+                    <NavBar />
+                    <Switch>
+
+                        <Route exact path="/" component={Home} />
+                        <Route path="/History" component={History} />
+                        <Route path="/Sectors" component={Sectors} />
+                        <Route path="/Clients" component={Clients} />
+                        <Route path="/Juniors" component={Juniors} />
+                        <Route path="/Seniors" component={Seniors} />
+                        <Route path="/Appointement" component={Appointment} />
+                        <Route path="/Mail" component={Mail} />
+                        <Route path="/SignIn" component={SignIn} />
+                        <Route path="/SignUp" component={SignUp} />
+                        <Route path="/pswForgot" component={pswForgot} />
+                        <PrivateRoute path="/MySpace" component={MySpace} />
+                        <Route component={Notfound} />
+
+
+                    </Switch>
+                </div>
+            </Router>
+        </AuthProvider>
+
     );
 }
 
