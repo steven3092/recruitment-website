@@ -35,11 +35,10 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "react-scripts build --prod",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "react-scripts build --prod"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
